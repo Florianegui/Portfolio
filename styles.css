@@ -375,20 +375,29 @@ section {
 .projects {
     background: var(--bg-light);
     scroll-margin-top: 100px;
+    width: 100%;
+}
+
+.projects .container {
+    max-width: 100%;
+    padding: 0 20px;
 }
 
 .projects-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 2.5rem;
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     align-items: stretch;
 }
 
 .projects-grid > * {
     width: 100% !important;
     max-width: 100% !important;
+    flex-shrink: 0;
 }
 
 .project-card {
