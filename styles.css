@@ -512,24 +512,37 @@ section {
 .project-card {
     background: white;
     padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    transition: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     width: 100%;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .project-card::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple), var(--data-cyan));
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .project-card:hover {
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(124, 58, 237, 0.1);
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-4px);
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-header {
@@ -539,6 +552,18 @@ section {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid var(--bg-light);
+    position: relative;
+}
+
+.project-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple));
+    border-radius: 2px;
 }
 
 .project-icon {
@@ -550,20 +575,40 @@ section {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 0.5rem;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
-    transition: none;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3), 0 0 30px rgba(124, 58, 237, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
 .project-icon::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
 }
 
 .project-card:hover .project-icon {
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 6px 30px rgba(37, 99, 235, 0.5), 0 0 50px rgba(124, 58, 237, 0.3);
+    transform: scale(1.05) rotate(5deg);
+}
+
+.project-card:hover .project-icon::before {
+    opacity: 1;
+    animation: shine 1.5s ease-in-out;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .project-header-text {
@@ -614,8 +659,15 @@ section {
 .realisation-section {
     margin: 1.2rem 0;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(249, 250, 251, 0.5));
+    transition: all 0.3s ease;
+}
+
+.realisation-section:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
 }
 
 .toggle-realisation {
@@ -725,39 +777,82 @@ section {
     gap: 1rem;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 2px solid var(--bg-light);
     flex-wrap: wrap;
+    position: relative;
+}
+
+.project-links::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple));
+    border-radius: 2px;
 }
 
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.85rem 1.5rem;
     background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
     color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25), 0 2px 4px rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+    left: 100%;
 }
 
 .project-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.5), 0 0 20px rgba(124, 58, 237, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4), 0 4px 8px rgba(124, 58, 237, 0.3), 0 0 30px rgba(6, 182, 212, 0.2);
     background: linear-gradient(135deg, var(--data-purple), var(--data-cyan));
+}
+
+.project-link:first-child {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25), 0 2px 4px rgba(239, 68, 68, 0.1);
+}
+
+.project-link:first-child:hover {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4), 0 4px 8px rgba(239, 68, 68, 0.3), 0 0 30px rgba(249, 115, 22, 0.2);
 }
 
 .project-link svg {
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .project-link:hover svg {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(5deg);
 }
 
 /* Skills Section */
