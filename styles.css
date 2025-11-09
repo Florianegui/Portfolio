@@ -920,6 +920,120 @@ section {
     font-size: 1.3rem;
 }
 
+/* Motivation Section */
+.motivation {
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.motivation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple), var(--data-cyan));
+    z-index: 1;
+}
+
+.motivation .section-title {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    text-align: center;
+}
+
+.motivation-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.motivation-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.motivation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.motivation-card:hover {
+    background: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.motivation-card:hover::before {
+    transform: scaleX(1);
+}
+
+.motivation-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.motivation-card:hover .motivation-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+}
+
+.motivation-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.motivation-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.motivation-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /* Contact Section */
 .contact {
     background: var(--bg-light);
@@ -1065,6 +1179,29 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .motivation .section-title {
+        font-size: 1.75rem !important;
+    }
+
+    .motivation-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .motivation-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .motivation-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.25rem;
+    }
+
+    .motivation-card h3 {
+        font-size: 1.25rem;
+    }
+
     .personal-skills {
         padding: 2.5rem 1.5rem;
     }
@@ -1123,6 +1260,23 @@ section {
         height: 60px !important;
         min-width: 60px !important;
         font-size: 2rem !important;
+    }
+
+    .motivation-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .motivation-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .motivation-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .motivation-card p {
+        font-size: 0.9rem;
     }
 
     .personal-skills {
