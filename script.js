@@ -174,55 +174,7 @@ if (canvas) {
     animate();
 }
 
-// Compteurs animés
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
 
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-// Observer pour les compteurs
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                if (!stat.classList.contains('animated')) {
-                    stat.classList.add('animated');
-                    // Réinitialiser à 0 avant d'animer
-                    stat.textContent = '0';
-                    animateCounter(stat);
-                }
-            });
-        }
-    });
-}, { threshold: 0.1 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    // Animer immédiatement si déjà visible
-    const rect = heroStats.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const statNumbers = heroStats.querySelectorAll('.stat-number');
-        statNumbers.forEach(stat => {
-            stat.textContent = '0';
-            animateCounter(stat);
-        });
-    } else {
-        statsObserver.observe(heroStats);
-    }
-}
 
 // Effet de curseur personnalisé avec glow (desktop seulement)
 if (window.innerWidth >= 768) {
@@ -298,24 +250,6 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Effet de typing pour le sous-titre
-const typingElement = document.querySelector('.typing-effect');
-if (typingElement) {
-    const text = typingElement.textContent;
-    typingElement.textContent = '';
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            typingElement.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-    
-    // Démarrer après un court délai
-    setTimeout(typeWriter, 1000);
-}
 
 // Accordéon pour les sections "Réalisation"
 document.querySelectorAll('.toggle-realisation').forEach(button => {
