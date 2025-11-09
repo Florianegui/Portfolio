@@ -378,11 +378,12 @@ section {
 }
 
 .projects-grid {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 2.5rem;
     max-width: 900px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .project-card {
@@ -394,7 +395,7 @@ section {
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    width: 100%;
     position: relative;
     overflow: visible;
 }
