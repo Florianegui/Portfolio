@@ -686,14 +686,14 @@ section {
 }
 
 .personal-skills-header .section-subtitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-dark);
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
     margin-bottom: 0.75rem;
-    background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
 }
 
 .personal-skills-description {
@@ -710,17 +710,19 @@ section {
 }
 
 .personal-skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
-    border-radius: 16px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    border-radius: 18px;
     border: 2px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .personal-skill-item::before {
@@ -747,18 +749,19 @@ section {
 }
 
 .personal-skill-icon {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
-    border-radius: 14px;
-    color: white;
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
+    border-radius: 16px;
+    color: white !important;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3) !important;
     transition: all 0.4s ease;
     position: relative;
+    margin: 0 auto;
 }
 
 .personal-skill-item:hover .personal-skill-icon {
@@ -775,6 +778,7 @@ section {
 .personal-skill-content {
     flex: 1;
     width: 100%;
+    text-align: center;
 }
 
 .personal-skill-content h4 {
