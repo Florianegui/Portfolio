@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floriane Guillou - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">FG</div>
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Floriane Guillou</h1>
+                <p class="hero-subtitle">Étudiante en Informatique (Data & IA)</p>
+                <p class="hero-description">
+                    Curieuse et motivée, je m'intéresse particulièrement à la valorisation des données 
+                    et à l'intelligence artificielle. J'aime apprendre de nouvelles technologies et 
+                    participer à des projets concrets combinant analyse, développement et innovation.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projets Académiques</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3 class="project-title">Visualisation de données TMDB</h3>
+                    <p class="project-subtitle">ECE Paris - B3</p>
+                    <p class="project-description">
+                        Récupération des données via l'API TMDB et scraping, prétraitement et nettoyage (pandas), 
+                        analyse exploratoire et création de visualisations interactives pour étudier tendances, 
+                        genres et box-office.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">API</span>
+                        <span class="tag">Data Visualization</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <h3 class="project-title">Jeu web PHP (NationsGlory)</h3>
+                    <p class="project-subtitle">ECE Paris - B2</p>
+                    <p class="project-description">
+                        Jeu de cartes avec interface admin/utilisateur. L'utilisateur tire des cartes, 
+                        gère une collection, interagit avec des blocs. Backend en PHP, base MySQL.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Web</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">💾</div>
+                    <h3 class="project-title">Projet Data</h3>
+                    <p class="project-subtitle">ECE Paris - B2</p>
+                    <p class="project-description">
+                        Mise en place d'un pipeline complet de traitement de données : scraping, 
+                        stockage, nettoyage et visualisation (avec Power BI).
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scraping</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Data Pipeline</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">👾</div>
+                    <h3 class="project-title">Jeu Pacman en C</h3>
+                    <p class="project-subtitle">ECE Paris - B2</p>
+                    <p class="project-description">
+                        Création d'un mini-jeu : déplacement, score, collisions, logique de jeu dans un labyrinthe. 
+                        (avec Allegro)
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Allegro</span>
+                        <span class="tag">Game Development</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3 class="project-title">Site e-commerce</h3>
+                    <p class="project-subtitle">ECE Paris - B1</p>
+                    <p class="project-description">
+                        Développement d'un site de vente de vins : UX conviviale, gestion des produits, 
+                        mise en avant des offres. (HTML/CSS)
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Langages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">PHP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Web</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Réseaux & Cloud</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">TCP/IP</span>
+                        <span class="skill-item">AWS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Outils</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">VSCode</span>
+                        <span class="skill-item">Jupyter</span>
+                        <span class="skill-item">Linux</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-skills">
+                <h3 class="section-subtitle">Compétences Personnelles</h3>
+                <div class="personal-skills-list">
+                    <div class="personal-skill-item">
+                        <span class="skill-icon">✓</span>
+                        <span>Autonome et travail d'équipe</span>
+                    </div>
+                    <div class="personal-skill-item">
+                        <span class="skill-icon">✓</span>
+                        <span>Résolution de problèmes</span>
+                    </div>
+                    <div class="personal-skill-item">
+                        <span class="skill-icon">✓</span>
+                        <span>Esprit analytique</span>
+                    </div>
+                    <div class="personal-skill-item">
+                        <span class="skill-icon">✓</span>
+                        <span>Gestion de projets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-description">
+                Vous souhaitez me contacter pour un stage ou un projet ? N'hésitez pas !
+            </p>
+            <div class="contact-info">
+                <a href="mailto:floriane0602@gmail.com" class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span>floriane0602@gmail.com</span>
+                </a>
+                <a href="tel:0630565913" class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>06 30 56 59 13</span>
+                </a>
+                <a href="https://www.linkedin.com/in/floriane-guillou-1a46432a4" target="_blank" class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Île de France</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Floriane Guillou. Tous droits réservés.</p>
+            <p class="footer-note">Recherche d'un stage de 4-6 mois dès mars 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
