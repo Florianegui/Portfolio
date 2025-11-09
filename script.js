@@ -212,14 +212,14 @@ if (window.innerWidth >= 768) {
         cursor.style.top = e.clientY + 'px';
     });
 
-    // Agrandir le curseur au survol des éléments interactifs
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .tag');
+    // Agrandir le curseur au survol des éléments interactifs (sauf les cartes projets)
+    const interactiveElements = document.querySelectorAll('a, button, .tag');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.borderColor = 'var(--data-purple)';
-            cursor.style.boxShadow = '0 0 30px var(--data-purple)';
+        cursor.style.width = '40px';
+        cursor.style.height = '40px';
+        cursor.style.borderColor = 'var(--data-purple)';
+        cursor.style.boxShadow = '0 0 30px var(--data-purple)';
         });
         el.addEventListener('mouseleave', () => {
             cursor.style.width = '20px';
