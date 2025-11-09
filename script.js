@@ -200,16 +200,28 @@ const statsObserver = new IntersectionObserver((entries) => {
             statNumbers.forEach(stat => {
                 if (!stat.classList.contains('animated')) {
                     stat.classList.add('animated');
+                    // Réinitialiser à 0 avant d'animer
+                    stat.textContent = '0';
                     animateCounter(stat);
                 }
             });
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) {
-    statsObserver.observe(heroStats);
+    // Animer immédiatement si déjà visible
+    const rect = heroStats.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const statNumbers = heroStats.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            stat.textContent = '0';
+            animateCounter(stat);
+        });
+    } else {
+        statsObserver.observe(heroStats);
+    }
 }
 
 // Effet de curseur personnalisé avec glow (desktop seulement)

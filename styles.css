@@ -146,7 +146,7 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
 }
@@ -472,9 +472,9 @@ section {
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .project-card::before {
@@ -594,15 +594,18 @@ section {
 
 /* Accordéon pour Réalisation */
 .realisation-section {
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .toggle-realisation {
     width: 100%;
-    background: transparent;
+    background: var(--bg-light);
     border: none;
     text-align: left;
-    padding: 0.8rem 0;
+    padding: 1rem 1.2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -610,13 +613,12 @@ section {
     color: var(--text-dark);
     font-size: 1rem;
     transition: all 0.3s ease;
-    border-radius: 8px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    border-radius: 0;
+    margin: 0;
 }
 
 .toggle-realisation:hover {
-    background: var(--bg-light);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
     color: var(--primary-color);
 }
 
@@ -624,34 +626,44 @@ section {
     margin: 0;
     display: inline;
     color: inherit;
+    font-weight: 600;
 }
 
 .toggle-icon {
-    margin-left: 1rem;
+    margin-left: auto;
     transition: transform 0.3s ease;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--primary-color);
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
 }
 
 .toggle-realisation[aria-expanded="true"] .toggle-icon {
     transform: rotate(180deg);
 }
 
+.toggle-realisation[aria-expanded="true"] {
+    border-bottom: 1px solid var(--border-color);
+}
+
 .realisation-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 0.5rem;
+    padding: 0 1.2rem;
+    background: white;
 }
 
 .realisation-content.expanded {
-    max-height: 500px;
-    padding: 1rem 0.5rem;
+    max-height: 1000px;
+    padding: 1.2rem;
 }
 
 .realisation-content .project-description {
     margin-bottom: 0;
     color: var(--text-light);
+    line-height: 1.8;
 }
 
 .project-tags {
