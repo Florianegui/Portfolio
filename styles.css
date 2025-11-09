@@ -378,10 +378,10 @@ section {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
-    max-width: 1400px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -394,7 +394,7 @@ section {
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    width: 100%;
     position: relative;
     overflow: visible;
 }
