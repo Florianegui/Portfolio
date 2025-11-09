@@ -811,7 +811,8 @@ section {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 2rem;
         max-width: 100%;
     }
