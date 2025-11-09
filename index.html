@@ -30,20 +30,56 @@
 
     <!-- Section Accueil -->
     <section id="accueil" class="hero">
+        <canvas id="dataCanvas" class="data-background"></canvas>
+        <div class="data-grid"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Floriane Guillou</h1>
-                <p class="hero-subtitle">Étudiante en Informatique (Data & IA)</p>
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Data & IA Enthusiast</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="text-gradient">Floriane Guillou</span>
+                </h1>
+                <p class="hero-subtitle typing-effect">Étudiante en Informatique (Data & IA)</p>
                 <p class="hero-description">
                     Curieuse et motivée, je m'intéresse particulièrement à la valorisation des données 
                     et à l'intelligence artificielle. J'aime apprendre de nouvelles technologies et 
                     participer à des projets concrets combinant analyse, développement et innovation.
                 </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Projets</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Langages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Motivation</div>
+                    </div>
+                </div>
                 <div class="hero-buttons">
-                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    <a href="#projets" class="btn btn-primary">
+                        <span>Voir mes projets</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Me contacter</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M2.5 6L10 11L17.5 6M2.5 14H17.5V6H2.5V14Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <div class="arrow"></div>
         </div>
     </section>
 
@@ -314,6 +350,24 @@
             <p class="footer-note">Recherche d'un stage de 4-6 mois dès mars 2026</p>
         </div>
     </footer>
+
+    <!-- Graphiques animés pour la section projets -->
+    <svg class="svg-defs" style="display: none;">
+        <defs>
+            <linearGradient id="dataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
 
     <script src="script.js"></script>
 </body>
