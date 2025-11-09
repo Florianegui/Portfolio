@@ -28,15 +28,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             // Pour la section projets, on veut qu'elle commence exactement après la navbar
             // sans voir aucune partie de l'accueil
             if (target.id === 'projets') {
-                // On calcule pour que le titre "Projets Académiques" soit juste sous la navbar
-                // On ajoute un peu plus d'espace pour être sûr que l'accueil n'est pas visible
-                offsetTop = target.offsetTop - navbarHeight - 5;
-                // S'assurer qu'on est bien au début de la section
-                const sectionTitle = target.querySelector('.section-title');
-                if (sectionTitle) {
-                    // Ajuster pour que le titre soit visible juste sous la navbar
-                    offsetTop = target.offsetTop - navbarHeight;
-                }
+                // On calcule pour que la section projets commence exactement après la navbar
+                // On utilise getBoundingClientRect pour un calcul plus précis
+                const rect = target.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                // Position exacte de la section moins la hauteur de la navbar
+                offsetTop = rect.top + scrollTop - navbarHeight;
             } else {
                 offsetTop = target.offsetTop - navbarHeight - 20;
             }
