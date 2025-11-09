@@ -23,25 +23,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            let offsetTop;
             
             // Pour la section projets, on veut qu'elle commence exactement après la navbar
             // sans voir aucune partie de l'accueil
             if (target.id === 'projets') {
-                // On calcule pour que la section projets commence exactement après la navbar
-                // On utilise getBoundingClientRect pour un calcul plus précis
-                const rect = target.getBoundingClientRect();
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                // Position exacte de la section moins la hauteur de la navbar
-                offsetTop = rect.top + scrollTop - navbarHeight;
+                // Utiliser scrollIntoView avec block: 'start' pour un positionnement précis
+                target.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
+                
+                // Ajuster après le scroll pour tenir compte de la navbar
+                setTimeout(() => {
+                    const rect = target.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const offsetTop = rect.top + scrollTop - navbarHeight;
+                    window.scrollTo({
+                        top: Math.max(0, offsetTop),
+                        behavior: 'auto'
+                    });
+                }, 100);
             } else {
-                offsetTop = target.offsetTop - navbarHeight - 20;
+                const offsetTop = target.offsetTop - navbarHeight - 20;
+                window.scrollTo({
+                    top: Math.max(0, offsetTop),
+                    behavior: 'smooth'
+                });
             }
-            
-            window.scrollTo({
-                top: Math.max(0, offsetTop),
-                behavior: 'smooth'
-            });
         }
     });
 });
