@@ -148,6 +148,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
+    min-height: auto;
 }
 
 .data-background {
@@ -327,6 +328,7 @@ section {
     background: var(--bg-light);
     scroll-margin-top: 100px;
     width: 100%;
+    padding-top: 20px;
 }
 
 .projects .container {

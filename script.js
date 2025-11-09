@@ -23,12 +23,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            // Pour la section projets, on veut qu'elle soit complètement visible sans voir l'accueil
-            let offsetTop = target.offsetTop - navbarHeight;
+            let offsetTop;
             
             // Pour la section projets, on veut qu'elle commence exactement après la navbar
+            // sans voir aucune partie de l'accueil
             if (target.id === 'projets') {
-                offsetTop = target.offsetTop - navbarHeight;
+                // On calcule pour que le titre "Projets Académiques" soit juste sous la navbar
+                offsetTop = target.offsetTop - navbarHeight - 10;
             } else {
                 offsetTop = target.offsetTop - navbarHeight - 20;
             }
