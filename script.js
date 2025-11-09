@@ -23,7 +23,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const offsetTop = target.offsetTop - navbarHeight - 20; // 20px d'espace supplémentaire
+            // Pour la section projets, on veut qu'elle soit complètement visible sans voir l'accueil
+            let offsetTop = target.offsetTop - navbarHeight;
+            
+            // Pour la section projets, on veut qu'elle commence exactement après la navbar
+            if (target.id === 'projets') {
+                offsetTop = target.offsetTop - navbarHeight;
+            } else {
+                offsetTop = target.offsetTop - navbarHeight - 20;
+            }
+            
             window.scrollTo({
                 top: Math.max(0, offsetTop),
                 behavior: 'smooth'

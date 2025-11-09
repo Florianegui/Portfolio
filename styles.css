@@ -374,13 +374,14 @@ section {
 /* Projects Section */
 .projects {
     background: var(--bg-light);
+    scroll-margin-top: 100px;
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
-    max-width: 1400px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -804,8 +805,8 @@ section {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
         gap: 2rem;
+        max-width: 100%;
     }
 
     .project-card {
