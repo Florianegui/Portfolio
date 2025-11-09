@@ -592,6 +592,68 @@ section {
     font-size: 1rem;
 }
 
+/* Accordéon pour Réalisation */
+.realisation-section {
+    margin-bottom: 1.2rem;
+}
+
+.toggle-realisation {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-dark);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.toggle-realisation:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.toggle-realisation strong {
+    margin: 0;
+    display: inline;
+    color: inherit;
+}
+
+.toggle-icon {
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
+.toggle-realisation[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.realisation-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 0.5rem;
+}
+
+.realisation-content.expanded {
+    max-height: 500px;
+    padding: 1rem 0.5rem;
+}
+
+.realisation-content .project-description {
+    margin-bottom: 0;
+    color: var(--text-light);
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;

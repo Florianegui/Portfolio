@@ -16,15 +16,16 @@ navLinks.forEach(link => {
     });
 });
 
-// Smooth scroll pour les liens de navigation
+// Smooth scroll pour les liens de navigation avec offset correct
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offsetTop = target.offsetTop - navbarHeight - 20; // 20px d'espace supplémentaire
             window.scrollTo({
-                top: offsetTop,
+                top: Math.max(0, offsetTop),
                 behavior: 'smooth'
             });
         }
@@ -303,4 +304,22 @@ if (typingElement) {
     // Démarrer après un court délai
     setTimeout(typeWriter, 1000);
 }
+
+// Accordéon pour les sections "Réalisation"
+document.querySelectorAll('.toggle-realisation').forEach(button => {
+    button.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const content = this.nextElementSibling;
+        
+        // Toggle l'état
+        this.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle la classe expanded
+        if (isExpanded) {
+            content.classList.remove('expanded');
+        } else {
+            content.classList.add('expanded');
+        }
+    });
+});
 
