@@ -411,30 +411,17 @@ section {
     border-radius: 12px;
     padding: 0.5rem;
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
-    transition: all 0.3s ease;
+    transition: none;
     position: relative;
     overflow: hidden;
 }
 
 .project-icon::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transform: rotate(45deg);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    display: none;
 }
 
 .project-card:hover .project-icon {
-    box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6), 0 0 60px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
 }
 
 .project-header-text {
