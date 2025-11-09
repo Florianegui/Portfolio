@@ -378,11 +378,17 @@ section {
 }
 
 .projects-grid {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 2.5rem;
     max-width: 900px;
     margin: 0 auto;
+    align-items: stretch;
+}
+
+.projects-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 .project-card {
