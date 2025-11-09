@@ -64,16 +64,13 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-// Observer les cartes de projets
+// Observer les cartes de projets - animations désactivées
 document.querySelectorAll('.project-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    card.style.opacity = '1';
     observer.observe(card);
 });
 
