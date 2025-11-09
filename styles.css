@@ -750,11 +750,55 @@ section {
     text-align: center;
 }
 
+.technical-skills {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.technical-skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple), var(--data-cyan));
+}
+
+.technical-skills-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.technical-skills-header .section-subtitle {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+.technical-skills-description {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
 }
 
 .skill-category {
@@ -1276,6 +1320,14 @@ section {
         margin: 0 auto;
     }
 
+    .technical-skills {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .technical-skills-header .section-subtitle {
+        font-size: 1.75rem;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
@@ -1396,6 +1448,10 @@ section {
 
     .motivation-card p {
         font-size: 0.9rem;
+    }
+
+    .technical-skills {
+        padding: 2rem 1rem;
     }
 
     .personal-skills {
