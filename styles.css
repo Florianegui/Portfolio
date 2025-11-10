@@ -896,11 +896,20 @@ section {
     margin-bottom: 0;
 }
 
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 .skill-category {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    background: white;
     padding: 2.5rem 2rem;
-    border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
     border: 2px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -917,21 +926,38 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--data-blue), var(--data-purple));
+    height: 5px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple), var(--data-cyan));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
 }
 
+.skill-category::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 .skill-category:hover {
     background: white;
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(124, 58, 237, 0.15);
+    transform: translateY(-5px);
 }
 
 .skill-category:hover::before {
     transform: scaleX(1);
+}
+
+.skill-category:hover::after {
+    opacity: 1;
 }
 
 .skill-category-header {
@@ -946,61 +972,99 @@ section {
 }
 
 .skill-category-icon {
-    font-size: 2.5rem !important;
-    width: 70px !important;
-    height: 70px !important;
-    min-width: 70px !important;
+    font-size: 3rem !important;
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3) !important;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35), 0 0 20px rgba(124, 58, 237, 0.2) !important;
     margin: 0 auto;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.skill-category-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple), var(--data-cyan));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    filter: blur(8px);
 }
 
 .skill-category:hover .skill-category-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5), 0 0 30px rgba(124, 58, 237, 0.3) !important;
+}
+
+.skill-category:hover .skill-category-icon::before {
+    opacity: 0.6;
 }
 
 .skill-category-title {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
     font-weight: 700 !important;
     margin: 0 !important;
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--text-dark), var(--primary-color));
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     text-align: center;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
-.skill-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-    justify-content: center;
-    width: 100%;
+.skill-category:hover .skill-category-title {
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
 .skill-item {
-    background: linear-gradient(135deg, var(--bg-light), #f1f5f9);
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
     color: var(--text-dark);
-    padding: 0.75rem 1.4rem;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 2px solid var(--border-color);
-    transition: all 0.3s ease;
+    padding: 0.85rem 1.6rem;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2.5px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill-item:hover::before {
+    left: 100%;
 }
 
 .skill-item:hover {
     background: linear-gradient(135deg, var(--data-blue), var(--data-purple));
     color: white !important;
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
-    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4), 0 2px 8px rgba(124, 58, 237, 0.3), 0 0 25px rgba(6, 182, 212, 0.2);
+    transform: translateY(-4px) scale(1.05);
 }
 
 .personal-skills {
@@ -1060,13 +1124,13 @@ section {
     text-align: center;
     gap: 1.5rem;
     padding: 2.5rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
-    border-radius: 18px;
+    background: white;
+    border-radius: 20px;
     border: 2px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .personal-skill-item::before {
@@ -1075,8 +1139,8 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--data-blue), var(--data-purple));
+    height: 5px;
+    background: linear-gradient(90deg, var(--data-blue), var(--data-purple), var(--data-cyan));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -1084,8 +1148,9 @@ section {
 
 .personal-skill-item:hover {
     background: white;
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(124, 58, 237, 0.15);
+    transform: translateY(-5px);
 }
 
 .personal-skill-item:hover::before {
@@ -1093,24 +1158,41 @@ section {
 }
 
 .personal-skill-icon {
-    width: 70px !important;
-    height: 70px !important;
-    min-width: 70px !important;
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     background: linear-gradient(135deg, var(--data-blue), var(--data-purple)) !important;
-    border-radius: 16px;
+    border-radius: 18px;
     color: white !important;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3) !important;
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35), 0 0 20px rgba(124, 58, 237, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     margin: 0 auto;
+    z-index: 1;
+}
+
+.personal-skill-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--data-blue), var(--data-purple), var(--data-cyan));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    filter: blur(8px);
 }
 
 .personal-skill-item:hover .personal-skill-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5), 0 0 30px rgba(124, 58, 237, 0.3) !important;
+}
+
+.personal-skill-item:hover .personal-skill-icon::before {
+    opacity: 0.6;
 }
 
 .personal-skill-icon svg {
