@@ -201,6 +201,82 @@
 
                 <div class="project-card">
                     <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <div class="project-header-text">
+                            <h3 class="project-title">Classification d'Images Pokémon avec SVM</h3>
+                            <p class="project-subtitle">ECE Paris - B3 | Projet Machine Learning | Dev et IA</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            <strong>Objectif :</strong> Développer un système complet de classification d'images en utilisant un SVM comme classifieur final. 
+                            Le dataset choisi est le Pokémon Classification Dataset (Kaggle) contenant environ 6 820 images RGB réparties en 150 classes 
+                            correspondantes aux Pokémon de la première génération.
+                        </p>
+                        <div class="realisation-section">
+                            <button class="toggle-realisation" aria-expanded="false">
+                                <strong>Réalisation :</strong>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                            <div class="realisation-content">
+                                <p class="project-description">
+                                    <strong>Prétraitement des Images :</strong> Chargement des données avec PyTorch (torchvision.datasets.ImageFolder), 
+                                    redimensionnement à 64×64 pixels, conversion RGB en niveaux de gris pour réduire la dimensionnalité de 12 288 à 4 096 dimensions, 
+                                    normalisation et tensorisation. Division du dataset en 70% train (4 774 images), 15% validation (1 023 images) et 15% test (1 023 images).
+                                </p>
+                                <p class="project-description">
+                                    <strong>Extraction de Features :</strong> Flatten des images en vecteurs unidimensionnels de 4 096 dimensions. 
+                                    Application de l'Analyse en Composantes Principales (PCA) pour réduire la dimensionnalité à 150 composantes, 
+                                    conservant 91.53% de la variance expliquée. Cette réduction permet d'accélérer l'entraînement du SVM tout en conservant 
+                                    l'information maximale.
+                                </p>
+                                <p class="project-description">
+                                    <strong>Méthodologie SVM :</strong> Utilisation d'un Support Vector Machine avec kernel RBF (Radial Basis Function) 
+                                    pour projeter les données dans un espace de dimension supérieure où elles deviennent séparables. 
+                                    Approche "one-vs-one" pour la classification multi-classes (150 classes). Optimisation des hyperparamètres avec GridSearchCV 
+                                    et validation croisée (3 folds) : meilleurs paramètres trouvés (C=10, gamma=0.001, kernel='rbf').
+                                </p>
+                                <p class="project-description">
+                                    <strong>Résultats :</strong> Accuracy de 21.51% sur le set de test, avec des performances variables selon les classes. 
+                                    Certaines classes comme Wigglytuff (F1-score: 0.74) et Pikachu (F1-score: 0.67) sont bien classifiées grâce à leurs 
+                                    caractéristiques visuelles distinctives. Analyse détaillée par classe avec métriques de précision, rappel et F1-score. 
+                                    Génération d'une matrice de confusion 150×150 pour visualiser les confusions entre classes.
+                                </p>
+                                <p class="project-description">
+                                    <strong>Analyse et Perspectives :</strong> Identification des limites de l'approche (features simples, manque de données, 
+                                    complexité computationnelle). Proposition d'améliorations : utilisation de features extraites d'un CNN pré-entraîné, 
+                                    augmentation de données, transfer learning, optimisation des hyperparamètres et traitement du déséquilibre des classes.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            <strong>Compétences développées :</strong> Classification d'images, Machine Learning, SVM, PyTorch, prétraitement de données, 
+                            PCA (réduction de dimensionnalité), optimisation d'hyperparamètres, évaluation de modèles multi-classes, analyse de métriques 
+                            (precision, recall, F1-score), visualisation de résultats (matrice de confusion).
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">PCA</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Classification</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Florianegui/ML" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <span>Voir le code (Git)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-icon">📊</div>
                         <div class="project-header-text">
                             <h3 class="project-title">Visualisation de données TMDB</h3>
